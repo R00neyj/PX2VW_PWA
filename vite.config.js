@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
+  base: '/PX2VW_PWA/',
   plugins: [
     VitePWA({
       registerType: 'autoUpdate',
@@ -9,12 +10,11 @@ export default defineConfig({
       devOptions: {
         enabled: true
       },
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'favicon.svg', 'pwa-192x192.png', 'pwa-512x512.png'],
-      manifest: {
-        name: 'VW Convertor',
-        short_name: 'VW Conv',
-        description: 'CSS px to vw 단위 자동 변환 도구',
-        theme_color: '#ffffff',
+            includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'favicon.svg', 'pwa-192x192.png', 'pwa-512x512.png'],
+            manifest: {
+              name: 'PX Convertor',
+              short_name: 'PX Conv',
+              description: 'CSS px to vw 단위 자동 변환 도구',        theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
         start_url: '/',
