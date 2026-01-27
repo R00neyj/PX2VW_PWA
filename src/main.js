@@ -2,6 +2,7 @@ import './style.css';
 import { initTheme } from './modules/theme.js';
 import { convert } from './modules/converter.js';
 import { initUI, setupFileHandlers } from './modules/ui.js';
+import { initTutorial } from './modules/tutorial.js';
 import { registerSW } from 'virtual:pwa-register';
 
 // PWA Service Worker Registration
@@ -20,6 +21,7 @@ registerSW({
 const inputEl = document.getElementById('input');
 const outputEl = document.getElementById('output');
 const baseWidthEl = document.getElementById('baseWidth');
+const baseWidthMobileEl = document.getElementById('baseWidthMobile');
 const precisionEl = document.getElementById('precision');
 const precisionMobileEl = document.getElementById('precisionMobile');
 
@@ -55,16 +57,25 @@ window.downloadResult = () => {
 };
 
 // Event Listeners
-[inputEl, baseWidthEl].forEach(el => {
-    el?.addEventListener('input', performConversion);
-});
+inputEl?.addEventListener('input', performConversion);
 
+// Sync Logic
 const syncPrecision = (e) => {
     const val = e.target.value;
     precisionEl.value = val;
     precisionMobileEl.value = val;
     performConversion();
 };
+
+const syncBaseWidth = (e) => {
+    const val = e.target.value;
+    baseWidthEl.value = val;
+    if (baseWidthMobileEl) baseWidthMobileEl.value = val;
+    performConversion();
+};
+
+baseWidthEl?.addEventListener('input', syncBaseWidth);
+baseWidthMobileEl?.addEventListener('input', syncBaseWidth);
 
 precisionEl?.addEventListener('input', syncPrecision);
 precisionMobileEl?.addEventListener('input', syncPrecision);
@@ -79,3 +90,6 @@ setupFileHandlers((content) => {
 // Initial Content
 inputEl.value = "/* Sample */\n.hero { width: 1920px; padding: 40px; }";
 performConversion();
+
+// Start Tutorial
+initTutorial();

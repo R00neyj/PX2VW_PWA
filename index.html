@@ -28,6 +28,7 @@
         <div class="header-content">
             <div class="logo">VW Convertor</div>
             <div class="controls">
+                <!-- Settings Group -->
                 <div class="settings">
                     <div class="setting-item">
                         <label for="baseWidth">Base</label>
@@ -43,16 +44,33 @@
                         </div>
                     </div>
                 </div>
-                <button class="theme-toggle" id="themeToggleDesktop" title="Toggle Theme">
-                    <span class="material-symbols-rounded sun" style="display:none;">light_mode</span>
+
+                <!-- Background Toggle -->
+                <button id="bgToggle" class="btn-icon" title="Change Background">
+                    <span class="material-symbols-rounded">wallpaper</span>
+                </button>
+                
+                <!-- Theme Toggle -->
+                <button id="themeToggleDesktop" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <span class="material-symbols-rounded sun" style="display: none;">light_mode</span>
                     <span class="material-symbols-rounded moon">dark_mode</span>
                 </button>
+                
+                <!-- Mobile Menu Toggle -->
                 <button class="mobile-menu-toggle" id="mobileMenuBtn">
                     <span class="material-symbols-rounded">settings</span>
                 </button>
             </div>
         </div>
+        
+        <!-- Mobile Expanded Menu -->
         <div class="mobile-expanded-content" id="mobileExpanded">
+            <div class="setting-item">
+                <label for="baseWidthMobile">Base Width (px)</label>
+                <div class="input-wrapper">
+                    <input type="number" id="baseWidthMobile" value="1920" min="1">
+                </div>
+            </div>
             <div class="setting-item">
                 <label for="precisionMobile">Decimals</label>
                 <div class="input-wrapper">
@@ -67,6 +85,9 @@
             </div>
         </div>
     </header>
+
+    <!-- Background Menu (Outside Header for Full Screen Positioning) -->
+    <div id="bgMenu" class="bg-menu hidden"></div>
 
     <main>
         <section class="editor-container" id="dropZone">
@@ -85,7 +106,7 @@
             <textarea id="input" spellcheck="false" placeholder="이곳에 CSS 코드를 직접 붙여넣거나, .css 파일을 끌어다 놓으세요."></textarea>
         </section>
 
-        <section class="editor-container">
+        <section class="editor-container" id="resultZone">
             <div class="editor-header">
                 <span class="editor-label">Result (vw)</span>
                 <div style="display: flex; gap: 8px;">
@@ -103,7 +124,8 @@
     </main>
 
     <footer>
-        <p>Made by <strong>R00neyj</strong> &nbsp;•&nbsp; <a href="https://github.com/your-username/vw_convertor" target="_blank">View on GitHub</a></p>
+        <p>Made by <strong>R00neyj</strong> &nbsp;•&nbsp; <a href="https://github.com/R00neyj/PX2VW_PWA" target="_blank">View on GitHub</a></p>
+        <p style="margin-top: 8px; font-size: 11px; opacity: 0.7;">3D Abstract Images from <a href="https://unsplash.com" target="_blank">Unsplash</a></p>
     </footer>
 
     <div id="toast" class="toast">Copied to clipboard</div>
