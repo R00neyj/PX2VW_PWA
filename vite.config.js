@@ -5,11 +5,11 @@ export default defineConfig({
   plugins: [
     VitePWA({
       registerType: 'autoUpdate',
-      injectRegister: 'inline',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'favicon.svg'],
+      injectRegister: 'auto',
       devOptions: {
         enabled: true
       },
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'favicon.svg', 'pwa-192x192.png', 'pwa-512x512.png'],
       manifest: {
         name: 'VW Convertor',
         short_name: 'VW Conv',
@@ -19,26 +19,31 @@ export default defineConfig({
         display: 'standalone',
         start_url: '/',
         scope: '/',
+        id: '/',
+        lang: 'ko-KR',
+        orientation: 'any',
+        categories: ['utilities', 'developer tools'],
         icons: [
           {
-            src: 'web-app-manifest-192x192.png',
+            src: 'pwa-192x192.png',
             sizes: '192x192',
-            type: 'image/png',
-            purpose: 'any'
+            type: 'image/png'
           },
           {
-            src: 'web-app-manifest-512x512.png',
+            src: 'pwa-512x512.png',
             sizes: '512x512',
-            type: 'image/png',
-            purpose: 'any'
+            type: 'image/png'
           },
           {
-            src: 'web-app-manifest-512x512.png',
+            src: 'pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
-            purpose: 'maskable'
+            purpose: 'any maskable'
           }
         ]
+      },
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}']
       }
     })
   ]
