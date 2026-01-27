@@ -300,9 +300,33 @@ header.expanded .mobile-menu-toggle .material-symbols-rounded {
 @media (max-width: 768px) {
   header.expanded .mobile-expanded-content {
     display: flex !important;
+    flex-direction: column;
+    padding: 0 24px 24px;
+    gap: 16px;
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+  }
+
+  .mobile-expanded-content .setting-item {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .mobile-expanded-content .setting-item label {
+    font-size: 13px;
+    text-transform: none;
+    font-weight: 600;
+  }
+
+  .mobile-expanded-content .input-wrapper {
+    width: 80px; /* Reduced width for the input wrapper */
+    justify-content: center;
+  }
+
+  #baseWidthMobile,
+  #precisionMobile {
+    width: 100%;
   }
 }
 
