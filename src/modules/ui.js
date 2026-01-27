@@ -3,11 +3,17 @@ export function initUI() {
     const headerEl = document.getElementById('mainHeader');
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 
+    let toastTimeout;
     function showToast(msg) {
         if (!toastEl) return;
+        
+        clearTimeout(toastTimeout);
         toastEl.textContent = msg;
-        toastEl.style.opacity = '1';
-        setTimeout(() => toastEl.style.opacity = '0', 2000);
+        toastEl.classList.add('show');
+        
+        toastTimeout = setTimeout(() => {
+            toastEl.classList.remove('show');
+        }, 2000);
     }
 
     if (mobileMenuBtn && headerEl) {

@@ -39,12 +39,12 @@ function performConversion() {
 window.resetAll = () => {
     if (confirm('초기화하시겠습니까?')) {
         inputEl.value = outputEl.value = "";
-        showToast('Cleared');
+        showToast('초기화되었습니다');
     }
 };
 
 window.copyResult = () => {
-    navigator.clipboard.writeText(outputEl.value).then(() => showToast('Copied'));
+    navigator.clipboard.writeText(outputEl.value).then(() => showToast('복사되었습니다!'));
 };
 
 window.downloadResult = () => {
@@ -84,7 +84,7 @@ precisionMobileEl?.addEventListener('input', syncPrecision);
 setupFileHandlers((content) => {
     inputEl.value = content;
     performConversion();
-    showToast('File Loaded');
+    showToast('파일을 불러왔습니다');
 });
 
 // Initial Content
