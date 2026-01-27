@@ -2,6 +2,8 @@
 
 **PX2VW Converter**는 CSS 코드 내의 `px` 단위를 `vw` 단위로 손쉽게 변환해 주는 프로그레시브 웹 앱(PWA)입니다. 반응형 웹 개발 시, 디자인 시안의 고정된 픽셀 값을 뷰포트 기반의 상대 단위로 빠르게 계산하고 변환할 수 있습니다.
 
+**로컬 터미널환경에서 실행하는 JS파일은 [해당 레포지터리](https://github.com/R00neyj/vw_convertor)에 있습니다.**
+
 ![Project Status](https://img.shields.io/badge/Status-Active-green)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
@@ -12,7 +14,7 @@
 - **유연한 설정**:
   - **Base Width**: 디자인 기준 해상도 너비 설정 (기본값: 1920px)
   - **소수점 정밀도**: 변환된 vw 값의 소수점 자릿수 조절 가능 (0~10자리)
-- **파일 처리**: 
+- **파일 처리**:
   - CSS 파일 드래그 & 드롭 지원
   - 변환 결과 파일 다운로드 (`converted.css`)
 - **편의 기능**:
