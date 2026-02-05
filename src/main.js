@@ -88,7 +88,7 @@ setupFileHandlers((content) => {
 });
 
 // Initial Content
-inputEl.value = "/* Sample */\n.hero { width: 1920px; padding: 40px; }";
+inputEl.value = ".hero { width: 1920px; padding: 40px; }";
 performConversion();
 
 // Start Tutorial
