@@ -87,9 +87,6 @@ setupFileHandlers((content) => {
     showToast('파일을 불러왔습니다');
 });
 
-// Initial Content
-inputEl.value = ".hero { width: 1920px; padding: 40px; }";
-performConversion();
-
 // Start Tutorial
+
 initTutorial();

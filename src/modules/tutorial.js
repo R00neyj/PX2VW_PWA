@@ -24,13 +24,9 @@ export function initTutorial() {
     ];
 
     let currentStep = 0;
-    let overlay, tooltip;
+    let tooltip;
 
     function createTutorialUI() {
-        overlay = document.createElement('div');
-        overlay.id = 'tutorialOverlay';
-        document.body.appendChild(overlay);
-
         tooltip = document.createElement('div');
         tooltip.className = 'tutorial-tooltip';
         tooltip.innerHTML = `
@@ -103,7 +99,6 @@ export function initTutorial() {
             }
 
             tooltip.classList.add('active');
-            overlay.classList.add('active');
         }
     }
 
@@ -113,12 +108,10 @@ export function initTutorial() {
     }
 
     function endTutorial() {
-        overlay.classList.remove('active');
         tooltip.classList.remove('active');
         document.querySelectorAll('.tutorial-highlight').forEach(e => e.classList.remove('tutorial-highlight'));
         
         setTimeout(() => {
-            overlay.remove();
             tooltip.remove();
         }, 300);
 

@@ -26,7 +26,7 @@ export default defineConfig(({ command }) => {
           scope: base,
           id: base,
           lang: "ko-KR",
-          orientation: "any",
+          orientation: "portrait",
           categories: ["utilities", "developer tools"],
           icons: [
             {
