@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VW Convertor — px to vw 단위 자동 변환 도구</title>
-    <meta name="description" content="CSS px 단위를 vw 단위로 실시간 자동 변환해주는 전문가용 도구입니다. 기준 너비와 소수점 정밀도를 자유롭게 설정하고, 파일 업로드 및 다운로드를 통해 효율적으로 반응형 웹을 개발하세요.">
-    <meta name="keywords" content="px to vw, CSS 변환기, vw 계산기, 반응형 웹 디자인 도구, 프론트엔드 퍼블리싱, 단위 변환기, vw convertor">
-    <meta name="author" content="R00neyj">
-    
+    <meta name="description" content="CSS px 단위를 vw 단위로 실시간 자동 변환해주는 전문가용 도구입니다. 기준 너비와 소수점 정밀도를 자유롭게 설정하고, 파일 업로드 및 다운로드를 통해 효율적으로 반응형 웹을 개발하세요." />
+    <meta name="keywords" content="px to vw, CSS 변환기, vw 계산기, 반응형 웹 디자인 도구, 프론트엔드 퍼블리싱, 단위 변환기, vw convertor" />
+    <meta name="author" content="R00neyj" />
+
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -15,124 +15,124 @@
     <meta name="apple-mobile-web-app-title" content="VW Conv" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="VW Convertor — px to vw 단위 자동 변환 도구">
-    <meta property="og:description" content="CSS의 px 수치를 디자인 가이드 기준 vw로 실시간 변환하세요. 애플 스타일의 세련된 UI와 강력한 파일 처리 기능을 제공합니다.">
-    <meta property="og:image" content="https://your-domain.com/og-image.jpg">
-    
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-</head>
-<body data-theme="light">
-    <header id="mainHeader">
-        <div class="header-content">
-            <div class="logo">VW Convertor</div>
-            <div class="controls">
-                <!-- Settings Group -->
-                <div class="settings">
-                    <div class="setting-item">
-                        <label for="baseWidth">Base</label>
-                        <div class="input-wrapper">
-                            <input type="number" id="baseWidth" value="1920" min="1">
-                            <span class="unit">px</span>
-                        </div>
-                    </div>
-                    <div class="setting-item desktop-precision">
-                        <label for="precision">Decimals</label>
-                        <div class="input-wrapper">
-                            <input type="number" id="precision" value="4" min="0" max="10">
-                        </div>
-                    </div>
-                </div>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="VW Convertor — px to vw 단위 자동 변환 도구" />
+    <meta property="og:description" content="CSS의 px 수치를 디자인 가이드 기준 vw로 실시간 변환하세요. 애플 스타일의 세련된 UI와 강력한 파일 처리 기능을 제공합니다." />
+    <meta property="og:image" content="https://your-domain.com/og-image.jpg" />
 
-                <!-- Background Toggle -->
-                <button id="bgToggle" class="btn-icon" title="Change Background">
-                    <span class="material-symbols-rounded">wallpaper</span>
-                </button>
-                
-                <!-- Theme Toggle -->
-                <button id="themeToggleDesktop" class="theme-toggle" aria-label="Toggle Dark Mode">
-                    <span class="material-symbols-rounded sun" style="display: none;">light_mode</span>
-                    <span class="material-symbols-rounded moon">dark_mode</span>
-                </button>
-                
-                <!-- Mobile Menu Toggle -->
-                <button class="mobile-menu-toggle" id="mobileMenuBtn">
-                    <span class="material-symbols-rounded">settings</span>
-                </button>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  </head>
+  <body data-theme="light">
+    <header id="mainHeader">
+      <div class="header-content">
+        <div class="logo">VW Convertor</div>
+        <div class="controls">
+          <!-- Settings Group -->
+          <div class="settings">
+            <div class="setting-item">
+              <label for="baseWidth">Base</label>
+              <div class="input-wrapper">
+                <input type="number" id="baseWidth" value="1920" min="1" max="9999" oninput="if (this.value > 9999) this.value = 9999;" placeholder="너비 입력" />
+                <span class="unit">px</span>
+              </div>
             </div>
+            <div class="setting-item desktop-precision">
+              <label for="precision">Decimals</label>
+              <div class="input-wrapper">
+                <input type="number" id="precision" value="4" min="0" max="10" oninput="if (this.value > 10) this.value = 10;" placeholder="소수점 입력" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Background Toggle -->
+          <button id="bgToggle" class="btn-icon" title="Change Background">
+            <span class="material-symbols-rounded">wallpaper</span>
+          </button>
+
+          <!-- Theme Toggle -->
+          <button id="themeToggleDesktop" class="theme-toggle" aria-label="Toggle Dark Mode">
+            <span class="material-symbols-rounded sun" style="display: none">light_mode</span>
+            <span class="material-symbols-rounded moon">dark_mode</span>
+          </button>
+
+          <!-- Mobile Menu Toggle -->
+          <button class="mobile-menu-toggle" id="mobileMenuBtn">
+            <span class="material-symbols-rounded">settings</span>
+          </button>
         </div>
-        
-        <!-- Mobile Expanded Menu -->
-        <div class="mobile-expanded-content" id="mobileExpanded">
-            <div class="setting-item">
-                <label for="baseWidthMobile">Base Width (px)</label>
-                <div class="input-wrapper">
-                    <input type="number" id="baseWidthMobile" value="1920" min="1">
-                </div>
-            </div>
-            <div class="setting-item">
-                <label for="precisionMobile">Decimals</label>
-                <div class="input-wrapper">
-                    <input type="number" id="precisionMobile" value="4" min="0" max="10">
-                </div>
-            </div>
-            <div class="setting-item">
-                <label>Appearance</label>
-                <button class="btn-secondary" id="themeToggleMobile" style="height: 30px; padding: 0 12px; border-radius: 10px; font-size: 13px; font-weight: 600;">
-                    <span id="themeTextMobile">Dark Mode</span>
-                </button>
-            </div>
+      </div>
+
+      <!-- Mobile Expanded Menu -->
+      <div class="mobile-expanded-content" id="mobileExpanded">
+        <div class="setting-item">
+          <label for="baseWidthMobile">Base Width (px)</label>
+          <div class="input-wrapper">
+            <input type="number" id="baseWidthMobile" value="1920" min="1" />
+          </div>
         </div>
+        <div class="setting-item">
+          <label for="precisionMobile">Decimals</label>
+          <div class="input-wrapper">
+            <input type="number" id="precisionMobile" value="4" min="0" max="10" />
+          </div>
+        </div>
+        <div class="setting-item">
+          <label>Appearance</label>
+          <button class="btn-secondary" id="themeToggleMobile" style="height: 30px; padding: 0 12px; border-radius: 10px; font-size: 13px; font-weight: 600">
+            <span id="themeTextMobile">Dark Mode</span>
+          </button>
+        </div>
+      </div>
     </header>
 
     <!-- Background Menu (Outside Header for Full Screen Positioning) -->
     <div id="bgMenu" class="bg-menu hidden"></div>
 
     <main>
-        <section class="editor-container" id="dropZone">
-            <div class="editor-header">
-                <span class="editor-label">CSS Input <small style="text-transform: none; font-size: 11px; font-weight: 500; opacity: 0.8; margin-left: 10px; color: var(--apple-text-secondary);">— 직접 입력 또는 파일 드래그</small></span>
-                <div style="display: flex; gap: 8px;">
-                    <button class="btn-icon" onclick="resetAll()" title="Reset (Clear everything)">
-                        <span class="material-symbols-rounded">delete</span>
-                    </button>
-                    <button class="btn-icon" onclick="document.getElementById('fileInput').click()" title="Upload CSS file">
-                        <span class="material-symbols-rounded">upload_file</span>
-                    </button>
-                    <input type="file" id="fileInput" accept=".css" style="display: none;">
-                </div>
-            </div>
-            <textarea id="input" spellcheck="false" placeholder="이곳에 CSS 코드를 직접 붙여넣거나, .css 파일을 끌어다 놓으세요."></textarea>
-        </section>
+      <section class="editor-container" id="dropZone">
+        <div class="editor-header">
+          <span class="editor-label">CSS Input <small style="text-transform: none; font-size: 11px; font-weight: 500; opacity: 0.8; margin-left: 10px; color: var(--apple-text-secondary)">— 직접 입력 또는 파일 드래그</small></span>
+          <div style="display: flex; gap: 8px">
+            <button class="btn-icon" onclick="resetAll()" title="Reset (Clear everything)">
+              <span class="material-symbols-rounded">delete</span>
+            </button>
+            <button class="btn-icon" onclick="document.getElementById('fileInput').click()" title="Upload CSS file">
+              <span class="material-symbols-rounded">upload_file</span>
+            </button>
+            <input type="file" id="fileInput" accept=".css" style="display: none" />
+          </div>
+        </div>
+        <textarea id="input" spellcheck="false" placeholder="이곳에 CSS 코드를 직접 붙여넣거나, .css 파일을 끌어다 놓으세요."></textarea>
+      </section>
 
-        <section class="editor-container" id="resultZone">
-            <div class="editor-header">
-                <span class="editor-label">Result (vw)</span>
-                <div style="display: flex; gap: 8px;">
-                    <button class="btn-icon" onclick="downloadResult()" title="Download as .css file">
-                        <span class="material-symbols-rounded">download</span>
-                    </button>
-                    <button class="btn-copy" onclick="copyResult()">
-                        <span class="material-symbols-rounded" style="font-size: 18px;">content_copy</span>
-                        Copy
-                    </button>
-                </div>
-            </div>
-            <textarea id="output" readonly spellcheck="false" placeholder="변환된 결과가 여기에 표시됩니다..."></textarea>
-        </section>
+      <section class="editor-container" id="resultZone">
+        <div class="editor-header">
+          <span class="editor-label">Result (vw)</span>
+          <div style="display: flex; gap: 8px">
+            <button class="btn-icon" onclick="downloadResult()" title="Download as .css file">
+              <span class="material-symbols-rounded">download</span>
+            </button>
+            <button class="btn-copy" onclick="copyResult()">
+              <span class="material-symbols-rounded" style="font-size: 18px">content_copy</span>
+              Copy
+            </button>
+          </div>
+        </div>
+        <textarea id="output" readonly spellcheck="false" placeholder="변환된 결과가 여기에 표시됩니다..."></textarea>
+      </section>
     </main>
 
     <footer>
-        <p>Made by <strong>R00neyj</strong> &nbsp;•&nbsp; <a href="https://github.com/R00neyj/PX2VW_PWA" target="_blank">View on GitHub</a></p>
-        <p style="margin-top: 8px; font-size: 11px; opacity: 0.7;">3D Abstract Images from <a href="https://unsplash.com" target="_blank">Unsplash</a></p>
+      <p>Made by <strong>R00neyj</strong> &nbsp;•&nbsp; <a href="https://github.com/R00neyj/PX2VW_PWA" target="_blank">View on GitHub</a></p>
+      <p style="margin-top: 8px; font-size: 11px; opacity: 0.7">3D Abstract Images from <a href="https://unsplash.com" target="_blank">Unsplash</a></p>
     </footer>
 
     <div id="toast" class="toast"></div>
 
     <script type="module" src="./src/main.js"></script>
-</body>
+  </body>
 </html>

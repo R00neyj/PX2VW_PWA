@@ -129,7 +129,7 @@ header {
   min-width: 580px;
   max-width: 90vw;
 
-  max-height: 60px;
+  min-height: 60px;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: visible;
 }
@@ -149,8 +149,8 @@ header.expanded {
 
 .header-content {
   gap: 16px;
-  height: 60px;
-  padding: 0 24px;
+  min-height: 60px;
+  padding: 12px 24px;
   display: flex;
   justify-content: space-between; /* This pushes logo and controls to ends */
   align-items: center;
@@ -181,7 +181,7 @@ header.expanded {
   background: rgba(0, 0, 0, 0.03);
   padding: 6px 6px 6px 18px;
   border-radius: 20px;
-  height: 42px;
+  min-height: 42px;
   transition: all 0.4s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -209,7 +209,7 @@ header.expanded {
   align-items: center;
   background: rgba(255, 255, 255, 0.4);
   padding: 0 10px;
-  height: 30px;
+  height: fit-content;
   border-radius: 12px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -230,13 +230,24 @@ input {
   font-size: 15px;
   font-weight: 700;
   color: var(--apple-blue);
+  padding: 12px 6px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} /* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 #baseWidth {
-  width: 65px;
+  min-width: 65px;
+  max-width: 100px;
 }
 #precision,
 #precisionMobile {
-  width: 40px;
+  min-width: 40px;
 }
 
 .unit {
@@ -477,7 +488,7 @@ textarea {
   background: transparent;
   resize: none;
   font-family: "Noto Sans Mono", monospace;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
   outline: none;
   color: var(--apple-text);
